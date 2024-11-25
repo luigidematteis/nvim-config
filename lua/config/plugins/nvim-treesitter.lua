@@ -24,7 +24,7 @@ return {
             ensure_installed = {
                 "csv", "dockerfile", "gitignore", "go", "gomod", "gosum",
                 "gowork", "json", "lua", "markdown",
-                "python", "sql", "yaml"
+                "python", "sql", "yaml", "c", "muttrc"
             },
             indent = {enable = true},
             auto_install = true,
