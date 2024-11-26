@@ -50,7 +50,7 @@ return {
         -- Pin/unpin buffer
         map("n", "<leader>pin", "<Cmd>BufferPin<CR>", opts)
         -- Close buffer
-        map("n", "<leader>ko", "<Cmd>BufferClose<CR>", opts)
+        map("n", "<leader>kk", "<Cmd>BufferClose<CR>", opts)
         map("n", "<leader>xxx", "<Cmd>BufferCloseAllButCurrent<CR>", opts)
     end
 }

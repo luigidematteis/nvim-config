@@ -6,7 +6,16 @@ return {
             "nvim-telescope/telescope-fzf-native.nvim",
             build = "make",
             enabled = true
-        }, {"nvim-telescope/telescope-file-browser.nvim", enabled = true}
+        }, 
+		  {
+			"nvim-telescope/telescope-file-browser.nvim", enabled = true
+		  },
+        { 
+        "nvim-telescope/telescope-live-grep-args.nvim" ,
+        -- This will not install any breaking changes.
+        -- For major updates, this must be adjusted manually.
+        version = "^1.0.0",
+        },
     },
     branch = "0.1.x",
     config = function()
@@ -43,6 +52,7 @@ return {
 
         telescope.load_extension("fzf")
         telescope.load_extension("file_browser")
+		  telescope.load_extension("live_grep_args")
 
         local builtin = require("telescope.builtin")
 
@@ -56,5 +66,6 @@ return {
         map("n", "<leader>ff", builtin.find_files, opts) -- Lists files in your current working directory, respects .gitignore
         map("n", "<leader>aa", builtin.treesitter, opts) -- Lists tree-sitter symbols
         map("n", "<leader>fs", builtin.spell_suggest, opts) -- Lists spell options
+		  map("n", "<leader>gg", builtin.live_grep, opts)
     end
 }
