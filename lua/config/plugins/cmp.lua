@@ -74,6 +74,15 @@ return {
 
         local lspconfig = require("lspconfig")
 
+        require("lspconfig").rust_analyzer.setup {
+          settings = {
+				['rust-analyzer'] = {
+					diagnostics = {
+						enable = false;
+					}
+				}
+			}
+		}
         -- All languages: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
         -- Default lspconfig values for Go are set by `navigator`
