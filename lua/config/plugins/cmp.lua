@@ -83,6 +83,16 @@ return {
 				}
 			}
 		}
+
+			-- Clangd setup for C/C++
+			lspconfig.clangd.setup({
+			  cmd = { "clangd", "--compile-commands-dir=build" }, -- Replace 'build' if the JSON is elsewhere
+			  filetypes = { "c", "cpp", "objc", "objcpp" },
+			  root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git"),
+			  init_options = {
+			  compilationDatabaseDirectory = "build", -- Ensure it matches your build system
+			  },
+			})
         -- All languages: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
         -- Default lspconfig values for Go are set by `navigator`
