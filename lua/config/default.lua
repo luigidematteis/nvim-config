@@ -22,13 +22,13 @@ vim.opt.wildmenu = true
 vim.opt.tabstop = 3
 vim.opt.shiftwidth = 3
 
--- filetype related 
+-- filetype related
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"gitcommit"},
-    callback = function(ev)
-        vim.api.nvim_set_option_value("textwidth", 72, {scope = "local"})
-    end
+  pattern = { "gitcommit" },
+  callback = function(ev)
+    vim.api.nvim_set_option_value("textwidth", 72, { scope = "local" })
+  end,
 })
 
-vim.api.nvim_set_keymap('n', '<leader>e', ':Neotree toggle<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>q', ':Neotree reveal<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>e", ":Neotree toggle<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>q", ":Neotree reveal<CR>", { noremap = true, silent = true })
